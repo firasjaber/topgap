@@ -1,4 +1,4 @@
-const Button = (props) => {
+const Button: React.FC = (props) => {
 	return <Button>{props.children}</Button>;
 };
 

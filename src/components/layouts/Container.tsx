@@ -1,4 +1,4 @@
-const Container = (props) => {
+const Container: React.FunctionComponent = (props) => {
 	return (
 		<div>
 			this is ur container

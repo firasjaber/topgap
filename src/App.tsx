@@ -1,6 +1,6 @@
 import './App.css';
-import Container from './components/layout/Container';
-import Profile from './components/containers/Profile';
+import { Container } from './components/layouts';
+import { Profile } from './components/containers';
 
 function App() {
 	return (
