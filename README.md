@@ -1,46 +1,19 @@
-# Getting Started with Create React App
+## League of legends look up tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+a frontend app that communicate with League of Legends Offiicial API to perform lookup tools for players profiles & game stats.
 
-## Available Scripts
+### Key Features
 
-In the project directory, you can run:
+- Player Profile Lookup that queries profile data ( pic, name ,level ) also stats ( rank, winrate, most played champs ) and last 20 games with winrate details and champs
+- Leaderboard Lookup that queries the top players in a server
+- Live game Lookup that queries current game for player with the details of the other 9 players, their winrate and elo in ranked, and their performance with current champ, last games
 
-### `npm start`
+### Technical Side
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+in this app i want to fox in the UX and UI, Animations, Loading & Error States and Code Structure.
+Tools :
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React js (CRA)
+- React-Router-DOM
+- TailwindCSS
+- Framer-motion
