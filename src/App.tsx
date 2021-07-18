@@ -6,7 +6,7 @@ function App() {
 	return (
 		<div className="App">
 			<Container>
-				<h2>Hello World</h2>
+				<h2>TOP DIFF (maybe bot too)</h2>
 				<Profile />
 			</Container>
 		</div>

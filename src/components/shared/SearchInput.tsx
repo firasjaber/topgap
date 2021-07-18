@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { RIOT_API_KEY } from './../../config';
+import { querySummoner } from './../../api/riotApi';
 
 type Inputs = {
 	summonerName: string;
@@ -11,7 +12,9 @@ const SearchInput: React.FunctionComponent = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<Inputs>();
-	const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data, RIOT_API_KEY);
+	const onSubmit: SubmitHandler<Inputs> = ({ summonerName }) => {
+		querySummoner(summonerName);
+	};
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
