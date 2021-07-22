@@ -65,3 +65,20 @@ export const queryGameDetail = async (gameId: number) => {
 		console.log(error);
 	}
 };
+
+export const buildPorfileData = async (summonerName: string) => {
+	try {
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const buildLiveGameData = async (summonerName: string) => {
+	try {
+	} catch (error) {}
+};
+
+export const buildLeaderBoardData = async () => {
+	try {
+	} catch (error) {}
+};
