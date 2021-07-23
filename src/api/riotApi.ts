@@ -68,6 +68,7 @@ export const queryGameDetail = async (gameId: number) => {
 
 export const buildPorfileData = async (summonerName: string) => {
 	try {
+		const URL = 'test';
 	} catch (error) {
 		console.log(error);
 	}
