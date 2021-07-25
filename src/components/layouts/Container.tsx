@@ -1,5 +1,5 @@
 const Container: React.FunctionComponent = (props) => {
-	return <div>{props.children}</div>;
+	return <div className="md:container md:mx-auto">{props.children}</div>;
 };
 
 export default Container;
