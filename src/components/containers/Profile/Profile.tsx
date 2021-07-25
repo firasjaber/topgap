@@ -9,7 +9,10 @@ const Profile = () => {
 				<RankedStats />
 				<ChampionsMastery />
 			</div>
-			<div className="flex-initial max-w-xs mx-auto bg-gray-100">
+			<div className="flex-initial max-w-xs mx-auto bg-gray-100 space-y-2">
+				<Match />
+				<Match />
+				<Match />
 				<Match />
 			</div>
 		</div>

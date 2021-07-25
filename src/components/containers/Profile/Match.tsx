@@ -7,7 +7,7 @@ const Match = () => {
 	const flashUrl = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/spell/SummonerFlash.png';
 	const itemUrl = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/item/1001.png';
 	return (
-		<div className="relative rounded overflow-hidden">
+		<div className="relative rounded overflow-hidden shadow">
 			<div className="bg-gray-400 w-full h-6 text-white text-xs p-1 pl-2">
 				Ranked Solo/Duo - 40 min - Victory - 1 day ago
 			</div>
