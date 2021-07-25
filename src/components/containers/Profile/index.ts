@@ -1,1 +1,1 @@
-export { default as ProfileFrame } from './ProfileFrame';
+export { default as Profile } from './Profile';
