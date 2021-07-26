@@ -26,12 +26,12 @@ const Match = () => {
 						</div>
 					</div>
 					{/* KDA & CS */}
-					<div className="flex flex-col items-center justify-center">
+					<div className="flex flex-col items-center justify-center ">
 						<div className="font-semibold text-lg">13/9/21</div>
 						<div className="text-sm -mt-1">150 cs</div>
 					</div>
 					{/* Items */}
-					<div className="grid grid-flow-col grid-cols-3 grid-rows-2 gap-1">
+					<div className="grid grid-flow-col grid-cols-3 grid-rows-2 gap-1 pl-2">
 						<img className="w-6 h-6 flex items-center justify-center rounded" src={itemUrl} alt="item" />
 						<img className="w-6 h-6 flex items-center justify-center rounded" src={itemUrl} alt="item" />
 						<img className="w-6 h-6 flex items-center justify-center rounded" src={itemUrl} alt="item" />
