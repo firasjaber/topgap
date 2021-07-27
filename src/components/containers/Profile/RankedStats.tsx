@@ -9,7 +9,9 @@ const RankedStats: React.FC = () => {
 				<div className="text-xs opacity-30">Ranked Solo/Duo</div>
 				<div className="font-semibold text-xl">Challenger</div>
 				<div className="text-sm opacity-50">29 games played</div>
-				<div>20 wins - 9 losses</div>
+				<div className="font-semibold">
+					55 LP <span className="text-xs">( 20W / 9L )</span>
+				</div>
 				<div className="text-sm opacity-50">Winrate : 60%</div>
 			</div>
 		</div>

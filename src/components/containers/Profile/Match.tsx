@@ -10,12 +10,12 @@ const Match: React.FC<MatchProps> = ({ won }) => {
 	const teleportUrl = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/spell/SummonerTeleport.png';
 	const flashUrl = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/spell/SummonerFlash.png';
 	const itemUrl = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/item/1001.png';
-	const lostColor = 'bg-gradient-to-r from-red-400 to-blue-500';
-	const wonColor = 'bg-gradient-to-r from-green-400 to-blue-500';
+	const lostColor = 'bg-gradient-to-r from-red-300 to-blue-400 via-red-300	';
+	const wonColor = 'bg-gradient-to-r from-green-300 to-blue-400 via-green-300	';
 	const color = won ? wonColor : lostColor;
 	return (
 		<div className={`relative rounded overflow-hidden shadow `}>
-			<div className={'w-full h-6 text-white text-xs p-1 pl-2 ' + color}>
+			<div className={'w-full h-6 text-gray-800 text-xs p-1 pl-2 ' + color}>
 				Ranked Solo/Duo - 40 min - Victory - 1 day ago
 			</div>
 			<div className="flex items-center justify-between">
@@ -60,7 +60,7 @@ const Match: React.FC<MatchProps> = ({ won }) => {
 					))}
 				</div>
 
-				<div className="absolute bottom-0 right-0 flex items-center justify-center h-full w-6 bg-blue-500">
+				<div className="absolute bottom-0 right-0 flex items-center justify-center h-full w-6 bg-blue-400">
 					<ChevronDoubleDownIcon className="h-4 w-4 mt-6 text-gray-100" />
 				</div>
 			</div>
