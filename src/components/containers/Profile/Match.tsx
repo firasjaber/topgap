@@ -49,11 +49,11 @@ const Match: React.FC<MatchProps> = ({ won }) => {
 				</div>
 
 				{/* Teams */}
-				<div className="grid grid-flow-col grid-cols-2 grid-rows-5 gap-y-0.5 gap-x-6 mr-14 sm:mr-10">
+				<div className="hidden xxs:grid grid-flow-col grid-cols-2 grid-rows-5 gap-y-0.5 gap-x-6 mr-12 xss:mr-15 sm:mr-10 ">
 					{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((el) => (
 						<div className="flex items-center" key={el}>
 							<img className="w-4 h-4 flex items-center justify-center rounded" src={championAvatar} alt="yasuo" />
-							<div className="text-xs font-normal ml-1 hidden w-10 overflow-hidden whitespace-nowrap xs:inline sm:w-20">
+							<div className="hidden text-xs font-normal ml-1  overflow-hidden whitespace-nowrap w-10 xs:inline sm:w-20">
 								FNC StanxyzL
 							</div>
 						</div>
