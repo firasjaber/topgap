@@ -10,10 +10,10 @@ const Profile = () => {
 				<ChampionsMastery />
 			</div>
 			<div className="flex-initial w-full max-w-xl mx-auto bg-gray-100 space-y-2">
-				<Match />
-				<Match />
-				<Match />
-				<Match />
+				<Match won={true} />
+				<Match won={false} />
+				<Match won={true} />
+				<Match won={false} />
 			</div>
 		</div>
 	);
