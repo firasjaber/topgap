@@ -1,7 +1,7 @@
 import ChampionsMastery from './ChampionsMastery';
 import Match from './Match';
-import MatchStats from './MatchStats';
 import RankedStats from './RankedStats';
+import RecentStats from './RecentStats';
 
 const Profile = () => {
 	return (
@@ -11,7 +11,7 @@ const Profile = () => {
 				<ChampionsMastery />
 			</div>
 			<div className="flex-initial w-full max-w-xl mx-auto  space-y-2">
-				<MatchStats />
+				<RecentStats />
 				<Match won={true} />
 				<Match won={false} />
 				<Match won={true} />

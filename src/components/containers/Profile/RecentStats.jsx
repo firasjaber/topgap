@@ -5,7 +5,7 @@ import TOP from './../../../utils/riot/roles/top.png';
 import JUNGLE from './../../../utils/riot/roles/jungle.png';
 import BOT from './../../../utils/riot/roles/bot.png';
 
-const MatchStats = () => {
+const RecentStats = () => {
 	const percentage = 55;
 	const championAvatar = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/champion/Yasuo.png';
 	//TODO : REWORK HOW TO GET LANES ICONS
@@ -69,4 +69,4 @@ const MatchStats = () => {
 	);
 };
 
-export default MatchStats;
+export default RecentStats;
