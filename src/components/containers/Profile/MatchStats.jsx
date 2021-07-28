@@ -1,11 +1,14 @@
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import TOP from './../../../utils/riot/roles/top.png';
+import JUNGLE from './../../../utils/riot/roles/jungle.png';
+import BOT from './../../../utils/riot/roles/bot.png';
 
 const MatchStats = () => {
 	const percentage = 55;
 	const championAvatar = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/champion/Yasuo.png';
-
+	//TODO : REWORK HOW TO GET LANES ICONS
 	return (
 		<div className="rounded overflow-hidden shadow bg-gray-100 mb-5 p-3 px-8">
 			<div className="flex items-center justify-between">
@@ -43,19 +46,19 @@ const MatchStats = () => {
 					<div className="text-gray-300 text-xs">Roles</div>
 
 					<div className="flex items-center">
-						<img className="rounded-full h-6 w-6 flex items-center justify-center" src={championAvatar} alt="yasuo" />
+						<img className="rounded-full h-6 w-6 flex items-center justify-center" src={TOP} alt="top" />
 						<div className="text-gray-800 text-md ml-2">
 							Top <span className="text-xs text-gray-500">10</span>
 						</div>
 					</div>
 					<div className="flex items-center">
-						<img className="rounded-full h-6 w-6 flex items-center justify-center" src={championAvatar} alt="yasuo" />
+						<img className="rounded-full h-6 w-6 flex items-center justify-center" src={JUNGLE} alt="jungle" />
 						<div className="text-gray-800 text-md ml-2">
 							Jungle <span className="text-xs text-gray-500">7</span>
 						</div>
 					</div>
 					<div className="flex items-center">
-						<img className="rounded-full h-6 w-6 flex items-center justify-center" src={championAvatar} alt="yasuo" />
+						<img className="rounded-full h-6 w-6 flex items-center justify-center" src={BOT} alt="bot" />
 						<div className="text-gray-800 text-md ml-2">
 							Bot <span className="text-xs text-gray-500">3</span>
 						</div>
