@@ -2,7 +2,7 @@ import React from 'react';
 
 const ChampionsMastery = () => {
 	return (
-		<div className="flex-col bg-gray-100  rounded-md shadow border my-2 overflow-hidden">
+		<div className="flex-col flex-1 bg-gray-100  rounded-md shadow border my-2 overflow-hidden w-full max-w-24">
 			<div className="bg-gray-700 text-white p-3 font-semibold text-lg pl-4">Champions Masteries</div>
 			<div className="space-y-2 my-2">
 				<ChampionMastery />
