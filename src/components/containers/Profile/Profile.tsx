@@ -1,5 +1,6 @@
 import ChampionsMastery from './ChampionsMastery';
 import Match from './Match';
+import MatchStats from './MatchStats';
 import RankedStats from './RankedStats';
 
 const Profile = () => {
@@ -9,7 +10,8 @@ const Profile = () => {
 				<RankedStats />
 				<ChampionsMastery />
 			</div>
-			<div className="flex-initial w-full max-w-xl mx-auto bg-gray-100 space-y-2">
+			<div className="flex-initial w-full max-w-xl mx-auto  space-y-2">
+				<MatchStats />
 				<Match won={true} />
 				<Match won={false} />
 				<Match won={true} />

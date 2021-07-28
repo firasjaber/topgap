@@ -14,7 +14,7 @@ const Match: React.FC<MatchProps> = ({ won }) => {
 	const wonColor = 'bg-gradient-to-r from-green-300 to-blue-400 via-green-300	';
 	const color = won ? wonColor : lostColor;
 	return (
-		<div className={`relative rounded overflow-hidden shadow `}>
+		<div className={`relative rounded overflow-hidden shadow bg-gray-100 `}>
 			<div className={'w-full h-6 text-gray-800 text-xs p-1 pl-2 ' + color}>
 				Ranked Solo/Duo - 40 min - Victory - 1 day ago
 			</div>
