@@ -10,7 +10,7 @@ const RecentStats = () => {
 	const championAvatar = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/champion/Yasuo.png';
 	//TODO : REWORK HOW TO GET LANES ICONS
 	return (
-		<div className="rounded overflow-hidden shadow bg-gray-100 mb-5 p-3 px-8">
+		<div className="rounded border overflow-hidden shadow bg-gray-100 mb-5 p-3 px-8">
 			<div className="flex items-center justify-between">
 				{/* Win Ratio & KDA Stats */}
 				<div className="flex flex-col">
