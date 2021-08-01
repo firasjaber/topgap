@@ -17,3 +17,5 @@ Tools :
 - React-Router-DOM
 - TailwindCSS
 - Framer-motion
+
+Deployed on Vercel
