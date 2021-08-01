@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { IProfileData, ISummonerRankedData } from '../interfaces';
 import { RIOT_API_KEY } from './../config';
 
@@ -74,7 +74,6 @@ export const queryGameDetail = async (gameId: number) => {
 
 export const buildPorfileData = async (summonerName: string) => {
 	try {
-		const URL = 'test';
 	} catch (error) {
 		console.log(error);
 	}
