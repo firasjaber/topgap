@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { queryLeaderboard } from '../../../api/riotApi';
 import PlayerTab from './PlayerTab';
 
 const Leaderboard = () => {
+	const [data, setData] = useState<Object[] | null>(null);
+	useEffect(() => {
+		const getData = async () => {
+			const res = await queryLeaderboard();
+			setData(res);
+		};
+		getData();
+	}, []);
 	return (
 		<div>
 			<div className="text-2xl font-semibold mb-3">
 				Players Leaderboard <span className="text-xl opacity-40 ml-2">EUW</span>
 			</div>
 			<div className="flex flex-col space-y-2">
-				<PlayerTab rank={1} name="FNC STAN" lp={1500} />
-				<PlayerTab rank={2} name="firrj" lp={1305} />
-				<PlayerTab rank={3} name="firrlXLZlmaoKurwa" lp={700} />
-				<PlayerTab rank={4} name="firrlXLZlmaoKurwa" lp={700} />
-				<PlayerTab rank={5} name="firrlXLZlmaoKurwa" lp={700} />
-				<PlayerTab rank={6} name="firrlXLZlmaoKurwa" lp={700} />
-				<PlayerTab rank={7} name="firrlXLZlmaoKurwa" lp={700} />
+				<PlayerTab rank={0} name="Firrj ( Firas Jaber )" lp={4069} />
+				{data?.map((summ: any, i) => (
+					<PlayerTab key={summ.summonerId} rank={i + 1} name={summ.summonerName} lp={summ.leaguePoints} />
+				))}
 			</div>
 		</div>
 	);

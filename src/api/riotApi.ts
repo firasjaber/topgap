@@ -11,6 +11,12 @@ const config: AxiosRequestConfig = {
 	},
 };
 
+export const queryLeaderboard = async () => {
+	const URL = `${BASE_URL}/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`;
+	const res = await axios.get(URL, config);
+	return res.data.entries.sort((a: any, b: any) => (a.leaguePoints < b.leaguePoints ? 1 : -1)).slice(0, 20);
+};
+
 export const querySummoner = async (summonerName: string) => {
 	try {
 		const URL = `${BASE_URL}/lol/summoner/v4/summoners/by-name/${summonerName}`;
