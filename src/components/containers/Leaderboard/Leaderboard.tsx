@@ -17,9 +17,16 @@ const Leaderboard = () => {
 				Players Leaderboard <span className="text-xl opacity-40 ml-2">EUW</span>
 			</div>
 			<div className="flex flex-col space-y-2">
-				<PlayerTab rank={0} name="Firrj ( Firas Jaber )" lp={4069} />
+				<PlayerTab rank={0} name="Firrj ( Firas Jaber )" lp={4069} wins={420} losses={0} />
 				{data?.map((summ: any, i) => (
-					<PlayerTab key={summ.summonerId} rank={i + 1} name={summ.summonerName} lp={summ.leaguePoints} />
+					<PlayerTab
+						key={summ.summonerId}
+						rank={i + 1}
+						name={summ.summonerName}
+						lp={summ.leaguePoints}
+						wins={summ.wins}
+						losses={summ.losses}
+					/>
 				))}
 			</div>
 		</div>
