@@ -10,6 +10,24 @@ const config: AxiosRequestConfig = {
 		//	Origin: 'http://localhost:300',
 	},
 };
+//NTOE : REFACTOR LATER
+async function getChampionAvatar(championKey: any) {
+	console.log('champ', championKey);
+	const URL = 'https://ddragon.leagueoflegends.com/api/versions.json';
+	const res = await axios.get(URL);
+	const version = res.data[0];
+	const NEW_URL = 'http://ddragon.leagueoflegends.com/cdn/' + version + '/img/champion/Aatrox.png';
+	const CHAMPS_URL = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/data/en_US/champion.json';
+	const res2 = await axios.get(CHAMPS_URL);
+	const allChamps = res2.data.data;
+	let myChamp = null;
+	for (const champ in allChamps) {
+		if (allChamps[champ].key === championKey.toString()) {
+			myChamp = allChamps[champ].id;
+		}
+	}
+	return [myChamp, 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/champion/' + myChamp + '.png'];
+}
 
 export const queryLeaderboard = async () => {
 	const URL = `${BASE_URL}/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`;
@@ -41,7 +59,14 @@ export const queryChampionsMystery = async (encryptedSummonerId: string) => {
 	try {
 		const URL = `${BASE_URL}/lol/champion-mastery/v4/champion-masteries/by-summoner/${encryptedSummonerId}`;
 		const res = await axios.get(URL, config);
-		return res.data.slice(0, 5);
+		const topFive = res.data.slice(0, 5);
+		const topFiveWithAvatar: any = [];
+		topFive.map(async ({ championId, championPoints, championLevel }: any) => {
+			const [champion, championAvatar] = await getChampionAvatar(championId);
+			console.log(champion, championAvatar);
+			topFiveWithAvatar.push({ championId, champion, championAvatar, championLevel, championPoints });
+		});
+		return topFiveWithAvatar;
 	} catch (error) {
 		console.log(error);
 	}
