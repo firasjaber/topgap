@@ -45,29 +45,10 @@ const Profile = () => {
 				setMatchHistory(res);
 			}
 		}
-		async function getChampionAvatar() {
-			const URL = 'https://ddragon.leagueoflegends.com/api/versions.json';
-			const res = await axios.get(URL);
-			const version = res.data[0];
-			const NEW_URL = 'http://ddragon.leagueoflegends.com/cdn/' + version + '/img/champion/Aatrox.png';
-			console.log(NEW_URL);
-			const CHAMPS_URL = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/data/en_US/champion.json';
-			const res2 = await axios.get(CHAMPS_URL);
-			const allChamps = res2.data.data;
-			let myChamp = null;
-			for (const champ in allChamps) {
-				if (allChamps[champ].key === '110') {
-					myChamp = allChamps[champ].id;
-				}
-			}
-			console.log(myChamp);
-			const myChampAvatar = 'http://ddragon.leagueoflegends.com/cdn/11.15.1/img/champion/' + myChamp + '.png';
-		}
 
 		//getLeague();
 		getChampionsMystery();
 		//getMatchHistory();
-		getChampionAvatar();
 	}, [profileData]);
 
 	return (
