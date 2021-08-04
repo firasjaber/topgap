@@ -7,7 +7,6 @@ const BASE_URL = 'https://fathomless-badlands-46265.herokuapp.com/https://euw1.a
 const config: AxiosRequestConfig = {
 	headers: {
 		'X-Riot-Token': RIOT_API_KEY,
-		//	Origin: 'http://localhost:300',
 	},
 };
 //NTOE : REFACTOR LATER
