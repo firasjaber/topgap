@@ -11,7 +11,6 @@ const config: AxiosRequestConfig = {
 };
 //NTOE : REFACTOR LATER
 async function getChampionAvatar(championKey: any) {
-	console.log('champ', championKey);
 	const URL = 'https://ddragon.leagueoflegends.com/api/versions.json';
 	const res = await axios.get(URL);
 	const version = res.data[0];
