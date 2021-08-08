@@ -1,4 +1,5 @@
 import React from 'react';
+import { nFormatter } from '../../../utils/formatters';
 
 interface ChampionsMasteryProps {
 	champions: Object[] | undefined;
@@ -29,12 +30,12 @@ const ChampionMastery: React.FC<ChampionMasteryProps> = (props) => {
 			<img
 				className="rounded-full h-12 w-12 flex items-center justify-center"
 				src={props.championAvatar}
-				alt="aatrox"
+				alt={props.champion}
 			/>
-			<div className="ml-3">
+			<div className="ml-3 ">
 				<div className="text-lg">{props.champion}</div>
 				<div className="text-xs opacity-30 -mt-1">Level {props.championLevel}</div>
-				<div className="text-sm opacity-70 -mt-1">{props.championPoints} Mastery Points</div>
+				<div className="text-sm opacity-70 -mt-1">{nFormatter(props.championPoints, 1)} Mastery Points</div>
 			</div>
 		</div>
 	);
