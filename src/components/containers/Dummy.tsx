@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { queryChampionsMystery, queryMatchHistory, querySummoner, querySummonerLeague } from './../../api/riotApi';
 //Interfaces
 import { IProfileData, ISummonerRankedData } from './../../interfaces';
+import ChampionsMastery from './Profile/ChampionsMastery';
 import RankedStats from './Profile/RankedStats';
 //Types
 type Inputs = {
@@ -63,6 +64,7 @@ const Profile = () => {
 				<input type="submit" />
 			</form>
 			<RankedStats />
+			<ChampionsMastery champions={championsMystery} />
 			<h4>profile infos</h4>
 			{profileData && <pre>{JSON.stringify(profileData, null, 2)}</pre>}
 			<h4>ranked infos</h4>

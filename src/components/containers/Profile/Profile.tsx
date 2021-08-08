@@ -9,7 +9,7 @@ const Profile = () => {
 			<div className="flex-initial w-auto mx-auto max-w-xl lg:max-64">
 				<div className="flex flex-col items-center md:flex-row md:space-x-2 lg:flex-col lg:space-x-0 lg:max-w-xs lg:mr-0 ">
 					<RankedStats />
-					<ChampionsMastery />
+					<ChampionsMastery champions={undefined} />
 				</div>
 			</div>
 			<div className="flex-1 w-full max-w-xl mx-auto space-y-2 lg:mt-2.5">
