@@ -50,6 +50,9 @@ const Profile = () => {
 		getChampionsMystery();
 		//getMatchHistory();
 	}, [profileData]);
+	useEffect(() => {
+		console.log(championsMystery);
+	}, [championsMystery]);
 
 	return (
 		<div>

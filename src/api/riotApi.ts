@@ -61,7 +61,6 @@ export const queryChampionsMystery = async (encryptedSummonerId: string) => {
 		const topFiveWithAvatar: any = [];
 		topFive.map(async ({ championId, championPoints, championLevel }: any) => {
 			const [champion, championAvatar] = await getChampionAvatar(championId);
-			console.log(champion, championAvatar);
 			topFiveWithAvatar.push({ championId, champion, championAvatar, championLevel, championPoints });
 		});
 		return topFiveWithAvatar;
