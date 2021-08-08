@@ -34,7 +34,7 @@ const ChampionMastery: React.FC<ChampionMasteryProps> = (props) => {
 			/>
 			<div className="ml-3 ">
 				<div className="text-lg">{props.champion}</div>
-				<div className="text-xs opacity-30 -mt-1">Level {props.championLevel}</div>
+				<div className="text-xs opacity-40 -mt-1">Level {props.championLevel}</div>
 				<div className="text-sm opacity-70 -mt-1">{nFormatter(props.championPoints, 1)} Mastery Points</div>
 			</div>
 		</div>
