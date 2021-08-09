@@ -1,6 +1,15 @@
 import React from 'react';
 import { formatRank, getWinRate } from '../../../utils/formatters';
-import logo from './../../../utils/riot/emblems/Emblem_Challenger.png';
+//Ranks Emblems
+import bronzeEmblem from './../../../utils/riot/emblems/Emblem_Bronze.png';
+import challengerEmblem from './../../../utils/riot/emblems/Emblem_Challenger.png';
+import diamonEmblem from './../../../utils/riot/emblems/Emblem_Diamond.png';
+import goldEmblem from './../../../utils/riot/emblems/Emblem_Gold.png';
+import grandmasterEmblem from './../../../utils/riot/emblems/Emblem_Grandmaster.png';
+import ironEmblem from './../../../utils/riot/emblems/Emblem_Iron.png';
+import masterEmblem from './../../../utils/riot/emblems/Emblem_Master.png';
+import platinumEmblem from './../../../utils/riot/emblems/Emblem_Platinum.png';
+import silverEmblem from './../../../utils/riot/emblems/Emblem_Silver.png';
 
 interface RankedStatsProps {
 	league: League | undefined;
@@ -25,7 +34,7 @@ type League = {
 const RankedStats: React.FC<RankedStatsProps> = ({ league }) => {
 	return (
 		<div className="flex p-3 bg-gray-100 w-72 lg:max-w-xs lg:w-full h-full md:mt-2 rounded-md shadow border">
-			<img src={logo} alt="challenger logo" className="w-24 h-28" />
+			<img src={getRankImage(league?.tier)} alt="challenger logo" className="w-24 h-28" />
 			<div className="ml-4">
 				<div className="text-xs opacity-30">Ranked Solo/Duo</div>
 				<div className="font-semibold text-xl">{league && formatRank(league?.tier, league?.rank)}</div>
@@ -41,5 +50,31 @@ const RankedStats: React.FC<RankedStatsProps> = ({ league }) => {
 		</div>
 	);
 };
+
+//get image rank based on rank
+function getRankImage(tier: string | undefined) {
+	switch (tier) {
+		case 'IRON':
+			return ironEmblem;
+		case 'BRONZE':
+			return bronzeEmblem;
+		case 'SILVER':
+			return silverEmblem;
+		case 'GOLD':
+			return goldEmblem;
+		case 'PLATINUM':
+			return platinumEmblem;
+		case 'DIAMOND':
+			return diamonEmblem;
+		case 'MASTER':
+			return masterEmblem;
+		case 'GRANDMASTER':
+			return grandmasterEmblem;
+		case 'CHALLENGER':
+			return challengerEmblem;
+		default:
+			return challengerEmblem;
+	}
+}
 
 export default RankedStats;
