@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatRank, getWinRate } from '../../../utils/formatters';
 import logo from './../../../utils/riot/emblems/Emblem_Challenger.png';
 
 interface RankedStatsProps {
@@ -27,15 +28,15 @@ const RankedStats: React.FC<RankedStatsProps> = ({ league }) => {
 			<img src={logo} alt="challenger logo" className="w-24 h-28" />
 			<div className="ml-4">
 				<div className="text-xs opacity-30">Ranked Solo/Duo</div>
-				<div className="font-semibold text-xl">Challenger</div>
-				<div className="text-sm opacity-50">29 games played</div>
-				<div className="font-semibold">
-					55 LP{' '}
-					<span className="text-xs">
+				<div className="font-semibold text-xl">{league && formatRank(league?.tier, league?.rank)}</div>
+				<div className="text-sm opacity-50">{league && league?.wins + league?.losses} games played</div>
+				<div className="font-semibold whitespace-nowrap overflow-hidden">
+					{league?.leaguePoints} LP{' '}
+					<span className="text-xs ">
 						( {league?.wins}W / {league?.losses}L )
 					</span>
 				</div>
-				<div className="text-sm opacity-50">Winrate : 60%</div>
+				<div className="text-sm opacity-50">Winrate : {league && getWinRate(league?.wins, league?.losses)}%</div>
 			</div>
 		</div>
 	);

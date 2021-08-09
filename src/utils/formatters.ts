@@ -1,8 +1,12 @@
-export const getWinRate = (w, l) => {
+export const getWinRate = (w: number, l: number) => {
 	return ((w / (l + w)) * 100).toFixed(0);
 };
 
-export const nFormatter = (num, digits) => {
+export const formatRank = (tier: string, rank: string) => {
+	return tier.charAt(0).toUpperCase() + tier.slice(1).toLowerCase() + ' ' + rank;
+};
+
+export const nFormatter = (num: number, digits: number) => {
 	const lookup = [
 		{ value: 1, symbol: '' },
 		{ value: 1e3, symbol: 'k' },
