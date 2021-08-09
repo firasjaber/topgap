@@ -31,6 +31,7 @@ const Profile = () => {
 		async function getLeague() {
 			if (profileData?.id) {
 				const res = await querySummonerLeague(profileData.id);
+				console.log('this is player league : ', res);
 				setRankedData(res);
 			}
 		}
@@ -47,7 +48,7 @@ const Profile = () => {
 			}
 		}
 
-		//getLeague();
+		getLeague();
 		getChampionsMystery();
 		//getMatchHistory();
 	}, [profileData]);
@@ -63,7 +64,7 @@ const Profile = () => {
 				{errors.summonerName?.type === 'required' && 'Please enter your summoner name'}
 				<input type="submit" />
 			</form>
-			<RankedStats />
+			<RankedStats league={rankedData} />
 			<ChampionsMastery champions={championsMystery} />
 			<h4>profile infos</h4>
 			{profileData && <pre>{JSON.stringify(profileData, null, 2)}</pre>}
