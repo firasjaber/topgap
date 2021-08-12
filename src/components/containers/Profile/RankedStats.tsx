@@ -10,6 +10,7 @@ import ironEmblem from './../../../utils/riot/emblems/Emblem_Iron.png';
 import masterEmblem from './../../../utils/riot/emblems/Emblem_Master.png';
 import platinumEmblem from './../../../utils/riot/emblems/Emblem_Platinum.png';
 import silverEmblem from './../../../utils/riot/emblems/Emblem_Silver.png';
+import unrankedEmblem from './../../../utils/riot/emblems/Emblem_Unranked.png';
 
 interface RankedStatsProps {
 	league: League | undefined;
@@ -34,18 +35,22 @@ type League = {
 const RankedStats: React.FC<RankedStatsProps> = ({ league }) => {
 	return (
 		<div className="flex p-3 bg-gray-100 w-72 lg:max-w-xs lg:w-full h-full md:mt-2 rounded-md shadow border">
-			<img src={getRankImage(league?.tier)} alt="challenger logo" className="w-24 h-28" />
+			<img src={league ? getRankImage(league?.tier) : unrankedEmblem} alt="challenger logo" className="w-24 h-28" />
 			<div className="ml-4">
 				<div className="text-xs opacity-30">Ranked Solo/Duo</div>
-				<div className="font-semibold text-xl">{league && formatRank(league?.tier, league?.rank)}</div>
-				<div className="text-sm opacity-50">{league && league?.wins + league?.losses} games played</div>
-				<div className="font-semibold whitespace-nowrap overflow-hidden">
-					{league?.leaguePoints} LP{' '}
-					<span className="text-xs ">
-						( {league?.wins}W / {league?.losses}L )
-					</span>
-				</div>
-				<div className="text-sm opacity-50">Winrate : {league && getWinRate(league?.wins, league?.losses)}%</div>
+				<div className="font-semibold text-xl">{league ? formatRank(league?.tier, league?.rank) : 'Unranked'}</div>
+				{league && (
+					<>
+						<div className="text-sm opacity-50">{league && league?.wins + league?.losses} games played</div>
+						<div className="font-semibold whitespace-nowrap overflow-hidden">
+							{league?.leaguePoints} LP{' '}
+							<span className="text-xs ">
+								( {league?.wins}W / {league?.losses}L )
+							</span>
+						</div>
+						<div className="text-sm opacity-50">Winrate : {league && getWinRate(league?.wins, league?.losses)}%</div>
+					</>
+				)}{' '}
 			</div>
 		</div>
 	);
