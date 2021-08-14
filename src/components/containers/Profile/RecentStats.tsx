@@ -1,6 +1,7 @@
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+//TODO : make this dynamic later
 import TOP from './../../../utils/riot/roles/top.png';
 import JUNGLE from './../../../utils/riot/roles/jungle.png';
 import BOT from './../../../utils/riot/roles/bot.png';
