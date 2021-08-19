@@ -1,19 +1,26 @@
-/* ./src/index.css */
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
 	min-width: 350px;
+	background-color: #000A1C;
 }
 
-.bg-image {
-	background: url(utils/leo-bg.webp) no-repeat center center fixed; 
-  background-size: cover;
+.bg-image:after {
 	position: absolute;
 	top: 0;
 	left: 0;
+	background-image: url(utils/leo-bg.webp);
+	background-size: auto;
+	background-position: top;
+	background-repeat: no-repeat;
 	width: 100%;
 	height: 100vh;
 	opacity: .20;
+	content:' ';
+	z-index: -1;
 }

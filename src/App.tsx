@@ -7,11 +7,10 @@ import LeonaBg from './utils/leo-bg.webp';
 
 function App() {
 	return (
-		<div className="relative bg-blue-1000 h-screen" >
+		<div className="relative h-screen">
 			<div className="bg-image"></div>
 			<Router>
 				<Container>
-					<h2>TOP DIFF (maybe bot too)</h2>
 					<Header />
 					<Switch>
 						<Route path="/profile" exact component={Profile} />
