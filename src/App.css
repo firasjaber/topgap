@@ -6,3 +6,14 @@
 body {
 	min-width: 350px;
 }
+
+.bg-image {
+	background: url(utils/leo-bg.webp) no-repeat fixed; 
+  background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	opacity: .20;
+}

@@ -3,10 +3,12 @@ import { Container } from './components/layouts';
 import { Livegame, Profile, Leaderboard, Home, Dummy } from './components/containers';
 import Header from './components/shared/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LeonaBg from './utils/leo-bg.webp';
 
 function App() {
 	return (
-		<div className="App">
+		<div className="relative bg-blue-1000 h-screen" >
+			<div className="bg-image"></div>
 			<Router>
 				<Container>
 					<h2>TOP DIFF (maybe bot too)</h2>

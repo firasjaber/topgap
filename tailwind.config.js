@@ -6,8 +6,14 @@ module.exports = {
 			screens: {
 				xxs: '420px',
 				xs: '500px',
-			},
+			}, 
+			colors: {
+				blue: {
+					1000 : '#000A1C'
+				}
+			}
 		},
+
 	},
 	variants: {
 		extend: {},
