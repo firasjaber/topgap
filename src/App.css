@@ -8,7 +8,7 @@ body {
 }
 
 .bg-image {
-	background: url(utils/leo-bg.webp) no-repeat fixed; 
+	background: url(utils/leo-bg.webp) no-repeat center center fixed; 
   background-size: cover;
 	position: absolute;
 	top: 0;
