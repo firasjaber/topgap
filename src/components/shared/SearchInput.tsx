@@ -18,6 +18,13 @@ const SearchInput: React.FunctionComponent = () => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
+			<select>
+				<option>EUW</option>
+				<option>NA</option>
+				<option>KR</option>
+				<option>CH</option>
+				<option>TR</option>
+			</select>
 			<input placeholder="summoner name" {...register('summonerName', { required: true })} />
 			{errors.summonerName?.type === 'required' && 'Please enter your summoner name'}
 			<input type="submit" />
