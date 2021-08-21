@@ -3,6 +3,8 @@ import { SearchIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { querySummoner } from './../../api/riotApi';
+import { Fragment } from 'react';
+import { Transition } from '@headlessui/react';
 
 type Inputs = {
 	summonerName: string;
@@ -21,14 +23,44 @@ const SearchInput: React.FunctionComponent = () => {
 	};
 
 	const [selectedRegion, setSelectedRegion] = useState<String>(regions[0]);
+	const [regionIsOpen, setRegionIsOpen] = useState<boolean>(false);
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className="relative flex items-center rounded ">
-				<div className=" absolute inset-y-0 left-0 flex items-center p-1 pl-4 space-x-2 text-gray-800 font-semibold">
-					<div>{selectedRegion}</div>
+				<div
+					className="absolute inset-y-0 left-0 flex items-center p-1 pl-4 space-x-2 text-gray-800 font-semibold cursor-pointer hover:bg-blue-100 rounded-l"
+					onClick={() => setRegionIsOpen((regionIsOpen) => !regionIsOpen)}
+				>
+					<div className={selectedRegion !== 'EUW' ? 'mr-2' : ''}>{selectedRegion}</div>
 					<ChevronDownIcon className="h-6 w-6 text-gray-600 focus:ring-blue-950" />
 				</div>
+				<Transition
+					as={Fragment}
+					enter="transition ease-out duration-100"
+					enterFrom="transform opacity-0 scale-95"
+					enterTo="transform opacity-100 scale-100"
+					leave="transition ease-in duration-75"
+					leaveFrom="transform opacity-100 scale-100"
+					leaveTo="transform opacity-0 scale-95"
+					show={regionIsOpen}
+				>
+					<div className="absolute left-0 mt-64 w-40 bg-blue-50 z-20 rounded text-gray-800">
+						{regions.map((region, key) => (
+							<div
+								key={key}
+								className="p-2 pl-4 w-full hover:bg-blue-100 cursor-pointer rounded transition-all"
+								onClick={() => {
+									setSelectedRegion(regions[key]);
+									setRegionIsOpen(false);
+								}}
+							>
+								{region}
+							</div>
+						))}
+					</div>
+				</Transition>
+
 				<input
 					className="p-3 w-96 bg-blue-50 pl-24 rounded"
 					placeholder="Search for your username"
