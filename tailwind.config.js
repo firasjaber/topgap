@@ -4,26 +4,26 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-        exo: ['"Exo 2"', 'sans-serif'],
-        inter: ['"Inter"', 'sans-serif'],
-      },
+				exo: ['"Exo 2"', 'sans-serif'],
+				inter: ['"Inter"', 'sans-serif'],
+			},
 			screens: {
 				xxs: '420px',
 				xs: '500px',
-			}, 
+			},
 			colors: {
 				blue: {
-					950 : '#0466C8',
-					1000 : '#000A1C'
-				}
-			}
+					50: '#EAF6FF',
+					950: '#0466C8',
+					1000: '#000A1C',
+				},
+			},
 		},
-
 	},
 	variants: {
 		extend: {
 			textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-			backgroundColor: ['hover']
+			backgroundColor: ['hover'],
 		},
 	},
 	plugins: [],
