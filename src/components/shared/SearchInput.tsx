@@ -12,7 +12,13 @@ type Inputs = {
 
 const regions = ['EUW', 'NA', 'KR', 'TR', 'CN'];
 
-const SearchInput: React.FunctionComponent = () => {
+interface SearchInputProps {
+	size?: String;
+}
+
+const SearchInput: React.FC<SearchInputProps> = ({ size = 'lg' }) => {
+	console.log(size);
+	const isSmall = size === 'sm';
 	const {
 		register,
 		handleSubmit,
@@ -29,7 +35,9 @@ const SearchInput: React.FunctionComponent = () => {
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className="relative flex items-center rounded ">
 				<div
-					className="absolute inset-y-0 left-0 flex items-center p-1 pl-4 space-x-2 text-gray-800 font-semibold cursor-pointer hover:bg-blue-100 rounded-l"
+					className={`absolute inset-y-0 left-0 flex items-center p-1 pl-4 text-gray-800 font-semibold cursor-pointer hover:bg-blue-100 rounded-l ${
+						isSmall ? 'space-x-1' : 'space-x-1'
+					}`}
 					onClick={() => setRegionIsOpen((regionIsOpen) => !regionIsOpen)}
 				>
 					<div className={selectedRegion !== 'EUW' ? 'mr-2' : ''}>{selectedRegion}</div>
@@ -62,7 +70,7 @@ const SearchInput: React.FunctionComponent = () => {
 				</Transition>
 
 				<input
-					className="p-3 w-96 bg-blue-50 pl-24 rounded"
+					className={`${isSmall ? 'p-1 w-90' : 'p-3 w-96'} bg-blue-50 pl-24 rounded `}
 					placeholder="Search for your username"
 					{...register('summonerName', { required: true })}
 				/>
