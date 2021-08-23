@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from '@heroicons/react/outline';
-import { SearchIcon } from '@heroicons/react/solid';
+import { CheckIcon, SearchIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { querySummoner } from './../../api/riotApi';
@@ -53,17 +53,18 @@ const SearchInput: React.FC<SearchInputProps> = ({ size = 'lg' }) => {
 					leaveTo="transform opacity-0 scale-95"
 					show={regionIsOpen}
 				>
-					<div className="absolute left-0 mt-64 w-40 bg-blue-50 z-20 rounded text-gray-800">
+					<div className="absolute left-0 mt-64 w-32 bg-blue-50 z-20 rounded text-gray-800">
 						{regions.map((region, key) => (
 							<div
 								key={key}
-								className="p-2 pl-4 w-full hover:bg-blue-100 cursor-pointer rounded transition-all"
+								className="flex items-center p-2 pl-4 w-full hover:bg-blue-100 cursor-pointer rounded transition-all"
 								onClick={() => {
 									setSelectedRegion(regions[key]);
 									setRegionIsOpen(false);
 								}}
 							>
 								{region}
+								{selectedRegion === region && <CheckIcon className="h-6 w-6 ml-2 text-gray-400 opacity-70" />}
 							</div>
 						))}
 					</div>
