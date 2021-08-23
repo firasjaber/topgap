@@ -35,8 +35,8 @@ const SearchInput: React.FC<SearchInputProps> = ({ size = 'lg' }) => {
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className="relative flex items-center rounded ">
 				<div
-					className={`absolute inset-y-0 left-0 flex items-center p-1 pl-4 text-gray-800 font-semibold cursor-pointer hover:bg-blue-100 rounded-l ${
-						isSmall ? 'space-x-1' : 'space-x-1'
+					className={`absolute inset-y-0 left-0 flex items-center p-1 text-gray-800 font-semibold cursor-pointer hover:bg-blue-100 rounded-l ${
+						isSmall ? 'space-x-0 pl-3' : 'space-x-2 pl-4'
 					}`}
 					onClick={() => setRegionIsOpen((regionIsOpen) => !regionIsOpen)}
 				>
@@ -70,13 +70,15 @@ const SearchInput: React.FC<SearchInputProps> = ({ size = 'lg' }) => {
 				</Transition>
 
 				<input
-					className={`${isSmall ? 'p-1 w-90' : 'p-3 w-96'} bg-blue-50 pl-24 rounded `}
-					placeholder="Search for your username"
+					className={`${isSmall ? 'p-1 w-60 pl-20' : 'p-3 w-96 pl-24'} bg-blue-50  rounded `}
+					placeholder={isSmall ? 'Username' : 'Search for your username'}
 					{...register('summonerName', { required: true })}
 				/>
 				{errors.summonerName?.type === 'required' && 'Please enter your summoner name'}
 				<button
-					className="absolute top-50 right-0 text-gray-500 h-12 w-12 p-3 rounded-r hover:bg-blue-100 transition-all"
+					className={`absolute top-50 right-0 text-gray-500 w-12 rounded-r hover:bg-blue-100 transition-all ${
+						isSmall ? 'h-8 p-1 -mr-3' : ' h-12 p-3'
+					}`}
 					type="submit"
 				>
 					<SearchIcon className="w-6 h-6" />
