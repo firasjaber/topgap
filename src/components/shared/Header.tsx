@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import SearchInput from '../shared/SearchInput';
 
-const Header: React.FC = (props) => {
+const Header: React.FC = () => {
 	const { pathname } = useLocation();
 	return (
 		<nav className="pt-5 flex flex-col space-y-2 items-center justify-between sm:flex-row sm:space-y-0">
