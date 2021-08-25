@@ -3,7 +3,6 @@ import { Container } from './components/layouts';
 import { Livegame, Profile, Leaderboard, Home, Dummy } from './components/containers';
 import Header from './components/shared/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import LeonaBg from './utils/leo-bg.webp';
 
 function App() {
 	return (
