@@ -17,7 +17,6 @@ interface SearchInputProps {
 }
 
 const SearchInput: React.FC<SearchInputProps> = ({ size = 'lg' }) => {
-	console.log(size);
 	const isSmall = size === 'sm';
 	const {
 		register,
