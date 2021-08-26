@@ -31,7 +31,6 @@ const Profile = () => {
 		async function getLeague() {
 			if (profileData?.id) {
 				const res = await querySummonerLeague(profileData.id);
-				console.log('this is player league : ', res);
 				setRankedData(res);
 			}
 		}
@@ -52,9 +51,7 @@ const Profile = () => {
 		getChampionsMystery();
 		//getMatchHistory();
 	}, [profileData]);
-	useEffect(() => {
-		console.log(championsMystery);
-	}, [championsMystery]);
+	useEffect(() => {}, [championsMystery]);
 
 	return (
 		<div>

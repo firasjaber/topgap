@@ -75,7 +75,6 @@ export const queryMatchHistory = async (encryptedAccountId: string) => {
 		const res = await axios.get<any>(URL, config);
 		let matches = res.data?.matches;
 		for (let i = 0; i < 5; i++) {
-			console.log(matches[0]);
 			matches[i].details = await queryGameDetail(5372356680);
 		}
 		return res.data?.matches;
