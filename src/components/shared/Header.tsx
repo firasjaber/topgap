@@ -4,7 +4,7 @@ import SearchInput from '../shared/SearchInput';
 const Header: React.FC = () => {
 	const { pathname } = useLocation();
 	return (
-		<nav className="pt-5 flex flex-col space-y-2 items-center justify-between sm:flex-row sm:space-y-0">
+		<nav className="pt-5 flex flex-col space-y-2 mb-16 items-center justify-between sm:flex-row sm:space-y-0">
 			<div className="flex  flex-col space-y-3 mb-1  items-center sm:space-x-8 sm:flex-row sm:space-y-0 sm:mb-0">
 				<Link to="/">
 					<div className="font-exo font-bold text-3xl">

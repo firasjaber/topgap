@@ -18,6 +18,9 @@ module.exports = {
 					1000: '#000A1C',
 				},
 			},
+			borderWidth: {
+				3: '3px',
+			},
 		},
 	},
 	variants: {
