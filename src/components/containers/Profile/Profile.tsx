@@ -38,8 +38,6 @@ const Profile = () => {
 					<RecentStats />
 					<Match won={true} />
 					<Match won={false} />
-					<Match won={true} />
-					<Match won={false} />
 				</div>
 			</div>
 		</div>
