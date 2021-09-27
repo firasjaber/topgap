@@ -74,7 +74,7 @@ export const queryMatchHistory = async (encryptedAccountId: string) => {
 		const URL = `${BASE_URL}/lol/match/v4/matchlists/by-account/${encryptedAccountId}?endIndex=5&beginIndex=0`;
 		const res = await axios.get<any>(URL, config);
 		let matches = res.data?.matches;
-		for (let i = 0; i < 5; i++) {
+		for (let i = 0; i < 10; i++) {
 			matches[i].details = await queryGameDetail(5372356680);
 		}
 		return res.data?.matches;
